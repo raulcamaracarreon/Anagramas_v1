@@ -57,7 +57,7 @@ st.set_page_config(
 )
 
 # Cargar el diccionario
-path = r"C:\Users\Hypnox\Proyectos\Anagramas\dict_rae_txt\dics"
+path = dict_rae_txt\dics"
   # Reemplaza esto con la ruta a tu carpeta de archivos del diccionario
 trie = Trie()
 cargar_diccionario(path, trie)
