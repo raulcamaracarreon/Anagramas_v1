@@ -1,5 +1,6 @@
 import os
 import streamlit as st
+import pathlib
 
 # Clases y funciones del trie
 class TrieNode:
@@ -58,7 +59,7 @@ st.set_page_config(
 
 # Cargar el diccionario
 # Reemplaza esto con la ruta a tu carpeta de archivos del diccionario
-path = "dict_rae_txt/dics" 
+path = pathlib.Path(__file__).parent / "dict_rae_txt/dics"
 trie = Trie()
 cargar_diccionario(path, trie)
 
