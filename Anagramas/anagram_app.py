@@ -45,9 +45,11 @@ class Trie:
 def cargar_diccionario(path, trie):
     for letra in "abcdefghijklmnñopqrstuvwxyz":
         with open(os.path.join(path, f"{letra}.txt"), encoding="utf-8") as archivo:
-            palabras = archivo.read().splitlines()
-            for palabra in palabras:
-                trie.insert(palabra.lower())
+            lineas = archivo.read().splitlines()
+            for linea in lineas:
+                palabras = linea.split(', ')
+                for palabra in palabras:
+                    trie.insert(palabra.lower())
 
 # Configuración de la aplicación Streamlit
 st.set_page_config(
