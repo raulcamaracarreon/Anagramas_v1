@@ -52,7 +52,7 @@ def cargar_diccionario(path, trie):
 # Configuración de la aplicación Streamlit
 st.set_page_config(
     page_title="Generador de Anagramas",
-    page_icon=":book:",
+    page_icon=":🔁:",
     layout="centered",
     initial_sidebar_state="auto",
 )
