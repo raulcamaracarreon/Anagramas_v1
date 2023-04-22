@@ -57,7 +57,8 @@ st.set_page_config(
 )
 
 # Cargar el diccionario
-path = dict_rae_txt\dics # Reemplaza esto con la ruta a tu carpeta de archivos del diccionario
+# Reemplaza esto con la ruta a tu carpeta de archivos del diccionario
+path = dict_rae_txt\dics 
 trie = Trie()
 cargar_diccionario(path, trie)
 
