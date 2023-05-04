@@ -65,11 +65,13 @@ repo_path = "dict_rae_txt"
 if not os.path.exists(repo_path):
     git.Git(".").clone(repo_url, repo_path)
 
-# Cargar el diccionario
+# Imprimir la ruta del diccionario
 path_diccionario = os.path.join(repo_path, "dics")
+print(f"Ruta del diccionario: {path_diccionario}")
+
+# Cargar el diccionario
 trie = Trie()
 cargar_diccionario(path_diccionario, trie)
-
 
 # Interfaz de usuario
 st.title("Generador de Anagramas")
@@ -81,5 +83,6 @@ if palabras:
     st.write(", ".join(sorted(anagramas)))
 else:
     st.write("Por favor, ingrese una o varias palabras para generar anagramas.")
+
 
 
