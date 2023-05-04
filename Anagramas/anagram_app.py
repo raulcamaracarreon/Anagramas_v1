@@ -1,6 +1,6 @@
 import os
 import streamlit as st
-import pathlib
+import git
 
 # Clases y funciones del trie
 class TrieNode:
@@ -59,9 +59,14 @@ st.set_page_config(
     initial_sidebar_state="auto",
 )
 
+# Clonar el repositorio del diccionario desde GitHub
+repo_url = "https://github.com/raulcamaracarreon/Anagramas_Exactos_V2.git"
+repo_path = "dict_rae_txt"
+if not os.path.exists(repo_path):
+    git.Git(".").clone(repo_url, repo_path)
+
 # Cargar el diccionario
-# Reemplaza esto con la ruta a tu carpeta de archivos del diccionario
-path = pathlib.Path(__file__).parent / "dict_rae_txt/dics"
+path = os.path.join(repo_path, "dics")
 trie = Trie()
 cargar_diccionario(path, trie)
 
@@ -75,3 +80,4 @@ if palabras:
     st.write(", ".join(sorted(anagramas)))
 else:
     st.write("Por favor, ingrese una o varias palabras para generar anagramas.")
+
