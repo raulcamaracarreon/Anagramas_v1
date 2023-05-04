@@ -66,9 +66,10 @@ if not os.path.exists(repo_path):
     git.Git(".").clone(repo_url, repo_path)
 
 # Cargar el diccionario
-path = os.path.join(repo_path, "dics")
+path_diccionario = os.path.join(repo_path, "dics")
 trie = Trie()
-cargar_diccionario(path, trie)
+cargar_diccionario(path_diccionario, trie)
+
 
 # Interfaz de usuario
 st.title("Generador de Anagramas")
